@@ -1,3 +1,12 @@
+**NB:** If using WSL2, it's better to have this repository in the Linux filesystem. This cuts down response time from 5s to 1s.
+
+# Setup steps:
+1. After cloning repository, copy values from .env.example to .env;
+2. Use docker compose: `docker-compose up -d` to start the services;
+3. Generate keys `docker exec -it latvenergo-app php artisan key:generate`;
+4. Run migrations `docker exec -it latvenergo-app php artisan migrate`;
+5. If you get the default Laravel page when opening http://localhost/, the server is working;
+
 ## Info par uzdevumu:
 Izstrādāt noliktavas sistēmas DB un API ar Laravel 12:
 Ir vairāki produkti, kuriem ir nosaukums, mazs apraksts, cena un pieejamais daudzums (quantity). Papildināt produktus ar seederi.
@@ -16,8 +25,8 @@ līdz 1dienai, 19.01.2026., plkst. 13.00.
 
 # Plāns pa soļiem
 
-1. Ieinstalēt Laravel 12 (varbūt vērts paskatīties neoficiālos headless starter kitus, bet tas gan jau par daudz laika aizņemtu);
-2. Dokerizēt DB un app (nokopēt no kāda cita projekta);
+1. ~~Ieinstalēt Laravel 12 (varbūt vērts paskatīties neoficiālos headless starter kitus, bet tas gan jau par daudz laika aizņemtu);~~
+2. ~~Dokerizēt DB un app (nokopēt no kāda cita projekta);~~
 3. Ieinstalēt Sanctum priekš API;
 4. Sākt ar migrācijām (produkti, pasūtījumi);
 5. Uztaisīt seederus priekš DB;

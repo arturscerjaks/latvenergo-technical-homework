@@ -1,0 +1,58 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .docker/app/Dockerfile.local
+    container_name: latvenergo-app
+    restart: unless-stopped
+    expose:
+      - "9000"
+    volumes:
+      - .:/var/www:delegated
+    environment:
+      - PHP_MEMORY_LIMIT=512M
+      - PHP_MAX_EXECUTION_TIME=120
+    networks:
+      - app-network-local
+    command: sh -c "
+        chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache &&
+        chmod -R 775 /var/www/storage /var/www/bootstrap/cache &&
+        php-fpm
+        "
+  nginx:
+    build:
+      context: .
+      dockerfile: .docker/nginx/Dockerfile.local
+    container_name: nginx-local
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./:/var/www
+    networks:
+      - app-network-local
+  db:
+    image: mysql:8.4.2
+    container_name: db-local
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app-network-local
+
+
+networks:
+  app-network-local:
+    driver: bridge
+
+volumes:
+  db_data:
+    driver: local

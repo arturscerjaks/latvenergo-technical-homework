@@ -17,6 +17,18 @@ class OrderItem extends Model
     ];
 
     /**
+     * Attributes that should be sent to frontend when requested
+     *
+     * @var array<string>
+     */
+    public const FRONTFACING_ATTRIBUTES = [
+        'product_name',
+        'price_at_order',
+        'qty',
+        'line_total'
+    ];
+
+    /**
      * Each order item belongs to an order
      *
      * @return BelongsTo<Order, OrderItem>

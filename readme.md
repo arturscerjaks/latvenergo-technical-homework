@@ -7,39 +7,11 @@
 4. Run migrations `docker exec -it latvenergo-app php artisan migrate`;
 5. If you get the default Laravel page when opening http://localhost/, the server is working;
 6. Seed the database `docker exec -it latvenergo-app php artisan db:seed`;
+7. Run tests `docker exec -it latvenergo-app php artisan test`
 
-## Info par uzdevumu:
-Izstrādāt noliktavas sistēmas DB un API ar Laravel 12:
-Ir vairāki produkti, kuriem ir nosaukums, mazs apraksts, cena un pieejamais daudzums (quantity). Papildināt produktus ar seederi.
-Ir pasūtījumi (orders), kas sastāv no vairākiem produktiem.
-Kad tiek izveidots jauns pasūtījums, no katra produkta tiek atņemts pasūtītais daudzums.
-Ja kādam produktam nav pieejams pasūtījuma daudzums, pasūtījums nedrīkst tikt izveidots.
+I prepared a workspace with the API testing tool UseBruno, you can use it to quickly test the API routes.
 
-## Papildu (kā bonusu novērtēsim):
-Ja tiks uzrakstīti arī testi.
-Vēlams commitus github pushot pēc iespējas biežāk.
-
-## Rezultāts:
-Veikto uzdevumu gaidīšu e-pastā github link-ā,
-līdz 1dienai, 19.01.2026., plkst. 13.00.
-
-
-# Plāns pa soļiem
-
-1. ~~Ieinstalēt Laravel 12 (varbūt vērts paskatīties neoficiālos headless starter kitus, bet tas gan jau par daudz laika aizņemtu);~~
-2. ~~Dokerizēt DB un app (nokopēt no kāda cita projekta);~~
-3. ~~Ieinstalēt Sanctum priekš API;~~
-4. ~~Sākt ar migrācijām (produkti, pasūtījumi, produkti pasūtījumos);~~
-5. ~~Uztaisīt seederus priekš DB (tikai produktiem, un basic test user);~~
-6. ~~Implementēt kontrolieru loģiku produktiem (produktu saraksts ar daudzumu);~~
-7. ~~Implementēt basic auth, jo pasūtījumiem vienmēr jāpieder lietotājam;~~
-8. Implementēt kontrolieru loģiku pasūtījumiem (pārbaude, vai pietiekami daudz produktu; atgriež kļūmi, ja nav produkta daudzuma);
-9. Uztaisīt requestus ar useBruno, lai pārbaudītājam būtu viegli pārbaudīt, jo viss saglabājas gitā;
-10. Uzrakstīt testus;
-11. Dokumentēt nepieciešamo palaišanai;
-
-## Lietas, uz kurām gan jau skatīsies:
-1) Vai palaist projektu ir vienkārši un ir instrukcijas (neaizmirsti apdeitot .env.example);
-2) Vai tiek pielietots pagination, piemēram, produktu sarakstam;
-3) Kā tiek formatēts/normalizēts pasūtījums datubāzē;
-4) Vai tiek uzrakstīti testi, un kas tiek pārbaudīts (vajadzētu pārbaudīt, kas notiek, ja ir pasūtījums ar QTY lielāku par produkta pieejamību, tukšs pasūtījums, parasts pasūtījums, vai produktu saraksts kko atgriež);
+If you are not familiar with it, UseBruno is very similar to Postman, but entirely local and everything
+is stored in files which means it can be commited to git.
+All you need to do is install it, and open the .usebruno/latvenergo-homework workspace through it,
+then you should see a nice collection of requests (auth, products and orders).

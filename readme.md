@@ -15,3 +15,7 @@ If you are not familiar with it, UseBruno is very similar to Postman, but entire
 is stored in files which means it can be commited to git.
 All you need to do is install it, and open the .usebruno/latvenergo-homework workspace through it,
 then you should see a nice collection of requests (auth, products and orders).
+
+![image](./UseBrunoScreenshot.png)
+
+If you have any questions, feel free to ask me, and thank you for considering me for this job. :)

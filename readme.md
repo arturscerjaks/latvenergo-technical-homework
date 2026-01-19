@@ -32,10 +32,11 @@ līdz 1dienai, 19.01.2026., plkst. 13.00.
 4. ~~Sākt ar migrācijām (produkti, pasūtījumi, produkti pasūtījumos);~~
 5. ~~Uztaisīt seederus priekš DB (tikai produktiem, un basic test user);~~
 6. ~~Implementēt kontrolieru loģiku produktiem (produktu saraksts ar daudzumu);~~
-7. Implementēt kontrolieru loģiku pasūtījumiem (pārbaude, vai pietiekami daudz produktu; atgriež kļūmi, ja nav produkta daudzuma);
-8. Uztaisīt requestus ar useBruno, lai pārbaudītājam būtu viegli pārbaudīt, jo viss saglabājas gitā;
-9. Uzrakstīt testus;
-10. Dokumentēt nepieciešamo palaišanai;
+7. ~~Implementēt basic auth, jo pasūtījumiem vienmēr jāpieder lietotājam;~~
+8. Implementēt kontrolieru loģiku pasūtījumiem (pārbaude, vai pietiekami daudz produktu; atgriež kļūmi, ja nav produkta daudzuma);
+9. Uztaisīt requestus ar useBruno, lai pārbaudītājam būtu viegli pārbaudīt, jo viss saglabājas gitā;
+10. Uzrakstīt testus;
+11. Dokumentēt nepieciešamo palaišanai;
 
 ## Lietas, uz kurām gan jau skatīsies:
 1) Vai palaist projektu ir vienkārši un ir instrukcijas (neaizmirsti apdeitot .env.example);

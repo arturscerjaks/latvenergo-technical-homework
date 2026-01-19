@@ -6,6 +6,7 @@
 3. Generate keys `docker exec -it latvenergo-app php artisan key:generate`;
 4. Run migrations `docker exec -it latvenergo-app php artisan migrate`;
 5. If you get the default Laravel page when opening http://localhost/, the server is working;
+6. Seed the database `docker exec -it latvenergo-app php artisan db:seed`;
 
 ## Info par uzdevumu:
 Izstrādāt noliktavas sistēmas DB un API ar Laravel 12:
@@ -27,10 +28,10 @@ līdz 1dienai, 19.01.2026., plkst. 13.00.
 
 1. ~~Ieinstalēt Laravel 12 (varbūt vērts paskatīties neoficiālos headless starter kitus, bet tas gan jau par daudz laika aizņemtu);~~
 2. ~~Dokerizēt DB un app (nokopēt no kāda cita projekta);~~
-3. Ieinstalēt Sanctum priekš API;
-4. Sākt ar migrācijām (produkti, pasūtījumi);
-5. Uztaisīt seederus priekš DB;
-6. Implementēt kontrolieru loģiku produktiem (produktu saraksts ar daudzumu);
+3. ~~Ieinstalēt Sanctum priekš API;~~
+4. ~~Sākt ar migrācijām (produkti, pasūtījumi, produkti pasūtījumos);~~
+5. ~~Uztaisīt seederus priekš DB (tikai produktiem, un basic test user);~~
+6. ~~Implementēt kontrolieru loģiku produktiem (produktu saraksts ar daudzumu);~~
 7. Implementēt kontrolieru loģiku pasūtījumiem (pārbaude, vai pietiekami daudz produktu; atgriež kļūmi, ja nav produkta daudzuma);
 8. Uztaisīt requestus ar useBruno, lai pārbaudītājam būtu viegli pārbaudīt, jo viss saglabājas gitā;
 9. Uzrakstīt testus;

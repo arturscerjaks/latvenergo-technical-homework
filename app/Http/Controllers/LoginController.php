@@ -47,7 +47,7 @@ class LoginController extends Controller
     /**
      * Logout user by deleting their personal access token(s)
      *
-     * @return void
+     * @return JsonResponse
      */
     public function deleteToken(Request $request): JsonResponse
     {

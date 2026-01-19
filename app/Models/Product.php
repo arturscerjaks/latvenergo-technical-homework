@@ -35,17 +35,4 @@ class Product extends Model
         'price',
         'qty'
     ];
-
-    /**
-     * Attributes that should be sent to frontend when requesting specific product
-     *
-     * @var array<string>
-     */
-    public const FRONTFACING_SHOW_ATTRIBUTES = [
-        'name',
-        'sku',
-        'description',
-        'price',
-        'qty'
-    ]; // Currently the same as list, but with time product tables usually bloat up with new columns
 }

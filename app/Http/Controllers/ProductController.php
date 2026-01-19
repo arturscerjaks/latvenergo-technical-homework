@@ -12,7 +12,7 @@ class ProductController extends Controller
     /**
      * Return a list of products
      *
-     * @return void
+     * @return JsonResponse
      */
     public function index(Request $request): JsonResponse
     {
@@ -31,7 +31,7 @@ class ProductController extends Controller
      * Show more about a specific product
      *
      * @param Product $product
-     * @return void
+     * @return JsonResponse
      */
     public function show(Product $product): JsonResponse
     {

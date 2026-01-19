@@ -1,0 +1,14 @@
+opencollection: 1.0.0
+info:
+  name: "latvenergo-homework"
+  type: workspace
+
+collections:
+  - name: "warehouse-app"
+    path: "collections\\warehouse-app"
+
+specs:
+
+docs: ''
+
+activeEnvironmentUid: aqg8ok000000000000000

@@ -1,0 +1,39 @@
+meta {
+  name: Create Order (sets order ID)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{BASE_URL}}/api/orders/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{BEARER_TOKEN}}
+}
+
+body:json {
+  {
+    "items": [
+      {
+        "id": 1,
+        "qty": 1
+      },
+      {
+        "id": 21,
+        "qty": 1
+      }
+    ]
+  }
+}
+
+vars:post-response {
+  ORDER_ID: res.body.order_id
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

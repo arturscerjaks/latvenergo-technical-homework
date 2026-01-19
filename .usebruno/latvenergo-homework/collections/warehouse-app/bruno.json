@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "warehouse-app",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

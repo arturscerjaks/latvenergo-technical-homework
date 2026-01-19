@@ -1,0 +1,27 @@
+meta {
+  name: Login (sets bearer)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{BASE_URL}}/api/login
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email": "test@example.com",
+    "password": "Password123!"
+  }
+}
+
+vars:post-response {
+  BEARER_TOKEN: res.body.token
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

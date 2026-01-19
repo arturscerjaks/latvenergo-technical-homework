@@ -1,0 +1,22 @@
+meta {
+  name: Get Products
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{BASE_URL}}/api/products?p=1&page_size=20&order_by=sku
+  body: none
+  auth: inherit
+}
+
+params:query {
+  p: 1
+  page_size: 20
+  order_by: sku
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,24 @@
+meta {
+  name: Show Order
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{BASE_URL}}/api/orders/show/{{ORDER_ID}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{BEARER_TOKEN}}
+}
+
+vars:pre-request {
+  ORDER_ID: 4
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
